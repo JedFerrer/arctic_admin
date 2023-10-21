@@ -18,12 +18,9 @@ function menu() {
   return document.querySelector('#tabs')
 }
 function menuToggle(event) {
-  const currentUser = document.querySelector('#current_user')
   const logout = document.querySelector('#logout')
   const forbiddenLinks = event.target === logout ||
-    logout.contains(event.target) ||
-    event.target === currentUser ||
-    currentUser.contains(event.target)
+    logout.contains(event.target)
   if (!forbiddenLinks) {
     menu().classList.toggle('tabs_open')
   }
